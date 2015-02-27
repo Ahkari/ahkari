@@ -1,0 +1,184 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+html,body,{
+	height: 100%;
+	overflow: hidden;
+}
+#allWrapper{
+	/*height: 100%;*/
+	overflow: hidden;
+	position:relative;
+	width: 100%;
+	/*transform:translateY(0px);*/
+	top:0px;
+	/*transition:all 1000ms cubic-bezier(0.86,0,0.07,1) 0s;*/
+	transition-property:all;
+	transition-duration:400ms;
+	transition-timing-function:cubic-bezier(0.86,0,0.07,1);
+	transition-delay:0s;
+}
+
+.videoMain{
+	height:100%;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.videoSectionBack{
+	width:100%;
+	height: 100%
+}
+#countingWave-wrap{
+	background-color: #000101;
+	position: relative;
+}
+#triggerFinger-wrap{
+	background-color: #ca7d36;
+	overflow: hidden;
+	position: relative;
+}
+#story-wrap{
+	background-color: #FF5C8F;
+}
+#beautifuWorld-wrap{
+	background-color: #307EFF;
+}
+#attackOnTitan-wrap{
+	background-color: #003C1A;
+}
+/*清除浮动*/
+.clearFloat{
+	clear:both;
+	display: none;
+}
+
+/*墙纸纹理*/
+.triggerFinger-body{
+   /*background-image:url(../src/wallInter.jpg);*/
+   background-repeat:repeat;
+   background-color:#ccc;
+ }
+
+
+/*密集型P标签文字，只在triggerfinger中有*/
+
+.triggerFinger-bottom p{
+	line-height: 0.6em;
+}
+.minWordPara{
+	position: relative;
+	top:5px;
+	left: 20px;
+	/*color:#444;*/
+	color:#999;
+}
+.triggerFinger-top h1{
+	position: absolute;
+	color: #f6e5c7;
+	font-size: 60px;
+	top:30px;
+	left:-200px;
+	opacity: 0;
+}
+.triggerFinger-body .bodyInfoPara{
+	z-index: 22;
+	position: absolute;
+	top:365px;
+	left:1400px;
+	height:220px;
+	width: 100px;
+	background-color: #e1745e;
+	/*background-color: #fff;*/
+	/*box-shadow: 0px 0px 5px 4px #fff outset;*/
+	box-shadow:-4px 4px 10px #ff7fe8 inset;
+	/*	background-image:-webkit-gradient(linear,left top,right bottom,from(#f1f6c7),to(#e1745e));
+    background:-moz-linear-gradient(left,#f1f6c7,#e1745e);    */
+	opacity: 0.2;
+	
+	border-radius: 10px;
+}
+.triggerFinger-body .bodyInfoPara-wrap{
+	color:#e376f7;
+	font-size: 20px;
+	position: absolute;
+	top:15px;
+	left: 20px;
+	/*line-height: 0.8em;*/
+
+}
+.triggerFinger-body .bodyInfoPara p{
+	position:relative; 
+	left: -0px;
+	font-size: 17px;
+	color: #fff;
+	text-align: right;
+}
+.triggerFinger-body .bodyInfoPara p span{
+	font-weight: bold;
+	font-size: 17px;
+	color:#9d2346;
+}
+.triggerFinger-body .bodyInfoPara p a{
+	font-size: 17px;
+	color:#fff;
+}
+.triggerFinger-Top .permamentIntro{
+	position: absolute;
+	line-height: 2em;
+	z-index: 19;
+	color: #f6e5c7;
+	font-size: 25px;
+	top:170px;
+	left:400px;
+	opacity: 0;
+}
+/*移上去高亮*/
+.bodyInfoPara-wrap p:hover{
+	background-color: #eee;
+	color:#333;	
+}
+.bodyInfoPara-wrap a:hover{
+	background-color: #eee;
+	color:#333;	
+}
+
+
+
+
+/*弹出层和视频层*/
+
+#clickWrap{
+	position: fixed;
+	z-index: 50;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.9;
+}
+.videoInset{
+	opacity: 1;
+	position: absolute;
+	background-color: #000;
+	width: 700px;
+	height:500px;
+	left:200px;
+	top:100px;
+/*	left:20%;
+	top: 20px;*/
+}
+
+/*.youkuVideo{
+	width: 700px;
+	height:500px;
+}
+
+*/
+
+
+
+
+

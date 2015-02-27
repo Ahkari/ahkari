@@ -1,0 +1,258 @@
+/*画框摇摆动画*/
+
+@keyframes frameSwing{
+	0%{
+		transform:rotate(0deg);
+		-moz-transform-origin:center 8%;
+	}
+	15%{
+		transform:rotate(-20deg);
+		-moz-transform-origin:center 8%;
+	}
+	40%{
+		transform:rotate(10deg);
+		-moz-transform-origin:center 8%;
+	}
+	60%{
+		transform:rotate(-5deg);
+		-moz-transform-origin:center 8%;
+	}
+	75%{
+		transform:rotate(3deg);
+		-moz-transform-origin:center 8%;
+	}
+	86%{
+		transform:rotate(-2deg);
+		-moz-transform-origin:center 8%;
+	}
+	92%{
+		transform:rotate(1deg);
+		-moz-transform-origin:center 8%;	
+	}
+	100%{
+		transform:rotate(0deg);
+		-moz-transform-origin:center 8%;
+	}
+}
+
+@keyframes frameSwingTheSmall{
+		0%{
+		transform:rotate(0deg);
+		-moz-transform-origin:center 30%;
+	}
+	15%{
+		transform:rotate(-20deg);
+		-moz-transform-origin:center 30%;
+	}
+	40%{
+		transform:rotate(10deg);
+		-moz-transform-origin:center 30%;
+	}
+	60%{
+		transform:rotate(-5deg);
+		-moz-transform-origin:center 30%;
+	}
+	75%{
+		transform:rotate(3deg);
+		-moz-transform-origin:center 30%;
+	}
+	86%{
+		transform:rotate(-2deg);
+		-moz-transform-origin:center 30%;
+	}
+	92%{
+		transform:rotate(1deg);
+		-moz-transform-origin:center 30%;	
+	}
+	100%{
+		transform:rotate(0deg);
+		-moz-transform-origin:center 30%;
+	}
+}
+
+
+@keyframes frameThePost{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes frameArmMio{
+	0%{
+		-moz-transform-origin:20% 80%;
+		transform:rotate(-10deg);
+	}
+	100%{
+		-moz-transform-origin:20% 80%;
+		transform:rotate(0deg);
+	}
+}
+@keyframes frameArmCDT{
+	0%{
+		-moz-transform-origin:80% 20%;
+		transform:rotate(-10deg);
+	}
+	100%{
+		-moz-transform-origin:80% 20%;
+		transform:rotate(0deg);
+	}
+}
+
+@keyframes lightOn{
+	0%{
+		opacity: 0.1;
+	}
+	100%{
+		opacity: .7;
+	}
+}
+
+/*走动动画*/
+@keyframes womanWalking{
+	0%{
+		left:1060px;
+		top:-380px;
+	}
+	15%{
+		top:-375px;
+	}
+	30%{
+		top:-360px;
+	}
+	50%{
+		top:-375px;
+	}
+	60%{
+		top:-380px;
+	}
+	70%{
+		top:-375px;
+	}
+	80%{
+		top:-360px;
+	}
+	90%{
+		top:-375px;
+	}
+	100%{
+		left:1320px;
+		top:-380px;
+	}
+}
+
+@keyframes manWalking{
+	0%{
+		top:-470px;
+		left:180px;
+	}
+	10%{
+		top:-460px;
+	}
+	15%{
+		top:-440px;
+	}
+	25%{
+		top:-460px;
+	}
+	30%{
+		top:-470px;
+	}
+	40%{
+		top:-460px;
+	}
+	50%{
+		top:-440px;
+	}
+	60%{
+		top:-460px;
+	}
+	70%{
+		top:-470px;
+	}
+	80%{
+		top:-460px;
+	}
+	85%{
+		top:-440px;
+	}
+	95%{
+		top:-460px;
+	}
+	100%{
+		top:-470px;
+		left:-450px;
+	}
+}
+
+@keyframes mainCharacterWalking{
+	0%{
+		top:-320px;
+		left:880px;
+	}
+	15%{
+		top:-310px;
+	}
+	35%{
+		top:-318px;
+	}
+	50%{
+		top:-308px;
+	}
+	60%{
+		top:-312px;
+	}
+
+	100%{
+		left:720px;
+		top:-306px;
+	}
+}
+
+@keyframes slideFormRight{
+	0%{
+		left:1400px;
+		width: 430px;
+		opacity: 0.2;
+	}
+	100%{
+	    left:900px;
+		width: 430px;
+		opacity: 0.7;
+	}
+}
+
+@keyframes slideFormLeft{
+	0%{
+		left:-200px;
+		opacity: 0.0;
+	}
+	100%{
+		left:20px;
+		opacity: 0.6;
+	}
+}
+
+@keyframes WarpSlideFormRight{
+	0%{
+		opacity: 1;
+		width: 70%;
+	}
+	100%{
+		opacity: 0.8;
+		width: 0%;
+	}
+}
+
+@keyframes introSlideFromRight{
+	0{
+		opacity: 0;
+		left:400px;
+	}
+	100%{
+		opacity: 0.4;
+		left:50px;
+	}
+}

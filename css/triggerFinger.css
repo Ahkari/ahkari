@@ -1,0 +1,397 @@
+#triggerFinger-back{
+	background-image: url("../src/wall.png");
+	background-position: 50%;
+	transform:scale(1.5);
+	opacity: 0;
+	display: none;
+	position: absolute;
+	z-index: 10;
+}
+.triggerFinger-top{
+	height:5%;
+	position: relative;
+	background-color: #060400;
+}
+.triggerFinger-body{
+	height:75%;
+	/*background-color: #825a21;*/
+	background-image:-webkit-gradient(linear,left top,left bottom,from(#2a1b06),to(#825a21));
+    background:-moz-linear-gradient(top,#2a1b06,#825a21);    
+}
+.triggerFinger-bottom{
+	position: relative;
+	height:30%;
+	clear: both;
+	background-image:-webkit-gradient(linear,left top,left bottom,from(#956f51),to(#695443));
+    background:-moz-linear-gradient(top,#956f51,#695443);    
+/*	background-color: #fff;*/
+}
+.triggerFinger-body-left1{
+	float: left;
+	width:10%;
+	height: 100%;
+}
+.triggerFinger-body-left2{
+	float: left;
+	width:20%;
+	height: 100%;
+}
+.triggerFinger-body-left3{
+	position: relative;
+	float: left;
+	width:40%;
+	height:100%;
+}
+.triggerFinger-body-left4{
+	float: left;
+	width:20%;
+	height:100%;
+}
+.triggerFinger-body-left5{
+	float: right;
+	width:10%;
+	height:100%;
+}
+.triggerFinger-frame,.triggerFinger-frameSmall,.triggerFinger-frameSmall2,.triggerFinger-frameSmall-theFirst{
+	display: block;
+	/*height: 100%;*/
+	/*width: 100%;*/
+	margin: 0px auto;
+	/*animation: changecolor 5s ease-out .2s;*/
+}
+.triggerFinger-frameSmall-theFirst{
+	position: relative;
+	left:-110px;
+}
+
+#triggerFinger-wrap:hover .triggerFinger-frame{
+	display: block;
+	/*height: 100%;*/
+	/*width: 100%;*/
+	margin: 0px auto;
+	/*animation: changecolor 5s ease-out .2s;*/
+	animation-name:frameSwing;
+	animation-duration:2s;
+	animation-timing-function:ease-out;
+	animation-delay:0s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-play-state:running;
+}
+#triggerFinger-wrap:hover .triggerFinger-frameSmall{
+	display: block;
+	/*height: 100%;*/
+	/*width: 100%;*/
+	margin: 0px auto;
+	/*animation: changecolor 5s ease-out .2s;*/
+	animation-name:frameSwingTheSmall;
+	animation-duration:1.2s;
+	animation-timing-function:ease-out;
+	animation-delay:0s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-play-state:running;
+}
+#triggerFinger-wrap:hover .triggerFinger-frameSmall2{
+	display: block;
+	/*height: 100%;*/
+	/*width: 100%;*/
+	margin: 0px auto;
+	/*animation: changecolor 5s ease-out .2s;*/
+	animation-name:frameSwingTheSmall;
+	animation-duration:1.6s;
+	animation-timing-function:ease-out;
+	animation-delay:0s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-play-state:running;
+}
+
+
+/*画框内部肢体动画*/
+
+.inside{
+	display: block;
+	opacity: 0;
+	position: absolute;
+	overflow: hidden;
+	left:85px;
+	top:139px;
+/*	margin:0 auto;*/
+	width: 370px;
+	height:183px;
+	/*opacity: 0.5;*/
+	/*background-color: #aaa;*/
+}
+.mioBody{
+	position: absolute;
+	top:15px;
+	left:-10px;
+	z-index: 7;
+}
+.mioArm{
+	position: absolute;
+	top:50px;
+	left:142px;
+	z-index: 9;
+}
+.CDTbody{
+	position:absolute;
+	top:-5px;
+	left:220px;
+	z-index: 5;
+}
+.CDTarm{
+	position:absolute;
+	top:-7px;
+	left:160px;
+	z-index: 3;
+}
+#triggerFinger-wrap:hover .inside{
+	animation-name:frameThePost;
+	animation-duration:1.2s;
+	animation-timing-function:ease-out;
+	animation-delay:2s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-fill-mode: forwards;
+	animation-play-state:running;
+}
+#triggerFinger-wrap:hover .mioArm{
+	animation-name:frameArmMio;
+	animation-duration:1.5s;
+	animation-timing-function:ease-out;
+	animation-delay:2s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:running;
+}
+#triggerFinger-wrap:hover .CDTarm{
+	animation-name:frameArmCDT;
+	animation-duration:1.5s;
+	animation-timing-function:ease-out;
+	animation-delay:2s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:running;
+}
+.pictureName{
+	position:static;
+	width: 220px;
+	height:30px;
+	margin:40px auto;
+	background-color: #c16b49;
+	box-shadow: 1px 2px 3px ;
+}
+.pictureName span{
+	color: #fff;
+	text-align: center;
+	font-family: ;
+	line-height: 30px;
+	font-size: 1.2em;
+	display: block;
+	padding: 0px auto;
+	margin: 2px auto;
+}
+.pictureNameOther{
+	position:static;
+	width: 100px;
+	height:20px;
+	margin:20px auto;
+	background-color: #829e9f;
+	box-shadow: 1px 1px 2px ;
+}
+.pictureNameOther span{
+	color: #fff;
+	text-align: center;
+	font-family: ;
+	line-height: 20px;
+	font-size: 0.8em;
+	display: block;
+	padding: 0px auto;
+	margin: 2px auto;
+}
+.pictureNameOtherFirst{
+	position:relative;
+	left:-40px;
+	width: 100px;
+	height:20px;
+	margin:20px auto;
+	background-color: #829e9f;
+	box-shadow: 1px 1px 2px ;
+}
+.pictureNameOtherFirst span{
+	color: #ddd;
+	text-align: center;
+	font-family: ;
+	line-height: 20px;
+	font-size: 0.8em;
+	display: block;
+	padding: 0px auto;
+	margin: 2px auto;
+}
+.pictureNameOtherLast{
+	position:relative;
+	left:40px;
+	width: 100px;
+	height:20px;
+	margin:20px auto;
+	background-color: #829e9f;
+	box-shadow: 1px 1px 2px ;
+}
+.pictureNameOtherLast span{
+	color: #ddd;
+	text-align: center;
+	font-family: ;
+	line-height: 20px;
+	font-size: 0.8em;
+	display: block;
+	padding: 0px auto;
+	margin: 2px auto;
+}
+
+/*灯光们*/
+
+.triggerFingerLight{
+	position: absolute;
+	z-index: 13;
+	top:0px;
+	left: -33px;
+	opacity: 0.1;
+	display: block;
+	margin: 0px auto;
+	background-image: url(../src/light.png);
+	background-repeat: no-repeat;
+	background-position: ;
+}
+#triggerFinger-wrap:hover .triggerFingerLight{
+	animation-name:lightOn;
+	animation-duration:1.5s;
+	animation-timing-function:ease-out;
+	animation-delay:2.5s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:running;
+}
+
+
+/*路人和女主角走过。*/
+
+.walkerWoman{
+	width:300px;
+	height: 700px;
+	position: absolute;
+	top:-380px;
+	left:1060px;
+	z-index: 25;
+}
+.walkerMan{
+	width:300px;
+	height: 700px;
+	position: absolute;
+	top:-470px;
+	left:180px;
+	z-index: 27;
+}
+.RXmain{
+	/*width: 500px;*/
+	height: 800px;
+	position: absolute;
+	top:-320px;
+	left:880px;
+	z-index: 23;
+}
+#triggerFinger-wrap:hover .walkerWoman{
+	animation-name:womanWalking;
+	animation-duration:1.8s;
+	animation-timing-function:linear;
+	animation-delay:0s;
+	animation-iteration-count:1s;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:runnig;
+}
+#triggerFinger-wrap:hover .walkerMan{
+	animation-name:manWalking;
+	animation-duration:2.5s;
+	animation-timing-function:linear;
+	animation-delay:0s;
+	animation-iteration-count:1s;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:runnig;
+}
+#triggerFinger-wrap:hover .RXmain{
+	animation-name:mainCharacterWalking;
+	animation-duration:3.5s;
+	animation-timing-function:ease-out;
+	animation-delay:0s;
+	animation-iteration-count:1s;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:runnig;
+}
+
+/*三个字符滑动效果！*/
+
+#triggerFinger-wrap:hover .triggerFinger-body .bodyInfoPara{
+	animation-name:slideFormRight;
+	animation-duration:1s;
+	animation-timing-function:ease-out;
+	animation-delay:1.2s;
+	animation-iteration-count:1s;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:runnig;
+}
+
+#triggerFinger-wrap:hover .permamentDream{
+	animation-name:slideFormLeft;
+	animation-duration:0.8s;
+	/*animation-timing-function:cubic-bezier(0.2,0.7,0.3,0.7);*/
+	animation-timing-function:ease-out;
+	animation-delay:0s;
+	animation-iteration-count:1s;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:runnig;
+}
+
+.expect{
+	position: absolute;
+	z-index: 5;
+	/*left: 0px;*/
+	height:100%;
+	width: 70%;
+	clear: both;
+	background-image:-webkit-gradient(linear,left top,left bottom,from(#956f51),to(#695443));
+    background:-moz-linear-gradient(top,#956f51,#695443);    
+/*	background-color: #fff;*/
+}
+#triggerFinger-wrap:hover .expect{
+	animation-name:WarpSlideFormRight;
+	animation-duration:3.5s;
+	/*animation-timing-function:cubic-bezier(0.2,0.7,0.3,0.7);*/
+	animation-timing-function:ease-out;
+	animation-delay:1s;
+	animation-iteration-count:1s;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:runnig;
+}
+
+#triggerFinger-wrap:hover .permamentIntro{
+	animation-name:introSlideFromRight;
+	animation-duration:1.2s;
+	/*animation-timing-function:cubic-bezier(0.2,0.7,0.3,0.7);*/
+	animation-timing-function:ease-out;
+	animation-delay:0.2s;
+	animation-iteration-count:1s;
+	animation-direction:normal;
+	animation-fill-mode:forwards;
+	animation-play-state:runnig;
+}
+

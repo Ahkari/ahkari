@@ -1,0 +1,10 @@
+#conutingWave{
+	position: absolute;
+	height:150px;
+	width: 400px;
+	top:35%;
+	left:35%;
+/*	margin:0 auto;
+	padding: 20px auto;*/
+	background-color: #222;
+}
