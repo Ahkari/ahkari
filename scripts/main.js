@@ -1,55 +1,17 @@
-//jQuery的mousewheel方法监听滚轮事件
-
-/*
 jQuery(function($){
-	var bodyPosition=0;
-	console.log(document.body.scrollHeight);
-	$(document).bind('mousewheel',function(event,delta){
-		// var dir=delta>0?'up':'Down',
-		// 	vel=Math.abs(delta);
-			var winHeight=window.document.body.clientHeight;	 
-			var pageHeight=document.body.scrollHeight;	
-			if (delta<0) {
-				// alert(winHeight);
-				// $("body").scrollTop(winHeight);
-				
-				if ((bodyPosition+winHeight)>pageHeight){
-				}else{
-				bodyPosition+=winHeight;
-				console.log(bodyPosition);
-				$("body").scrollTop(bodyPosition);
-				}
-			}
-			else if(delta>0){
-				if ((bodyPosition-winHeight)<0){
-				}else{
-				bodyPosition-=winHeight;
-				console.log(bodyPosition);
-				$("body").scrollTop(bodyPosition);
-				}
-			}
-			return false;
-	});
-});   */
-
-// div class="wrapper" style="transform: translate3d(0px, -843px, 0px); transition: all 1000ms cubic-bezier(0.86, 0, 0.07, 1) 0s;"
-// $(".btn1").click(function(){
-//   $("p").css("color","red");
-// });
-
-jQuery(function($){
-	console.log(document.body.scrollHeight);
-	var animeState="none";
+	// console.log(document.body.scrollHeight);
 	var pageIndex=1;
 	$(document).bind('mousewheel',function(event,delta)
 		{
 		var $pageActive=null;
 		var pageIndexName=null;
-		console.log(animeState);
-		console.log(pageIndex);
 		var winHeight=window.document.body.clientHeight;
+		//css动画运行中
+		
+
+
 		//当前木有动画
-		if (animeState=="none")
+		if (!$("#allWrapper").is(":animated"))
 		{	
 			// 这是识别出了向下滚！且允许向下滚
 			if (delta<0&&pageIndex<5) 
@@ -58,16 +20,14 @@ jQuery(function($){
 					var animeHeight="-="+winHeight.toString()+"px";	
 					$("#allWrapper").animate({
 						top:animeHeight
-					},"slow",function(){
+					},500,"easeOutCubic",function(){
 						pageIndex+=1;
 						$pageActive=$("#allWrapper section:nth-child("+pageIndex+")");
 						pageIndexName=$pageActive.attr("id");
-						console.log(pageIndexName);
-						animeState="none";});
+						console.log(pageIndexName);});
 					videoStop();
 				}
-				setTimeout(downAnime,400);
-				animeState="doing";
+				downAnime();
 			}
 			//识别出了向上滚！且允许向上滚
 			else if(delta>0&&pageIndex>1)
@@ -76,16 +36,15 @@ jQuery(function($){
 					var animeHeight="+="+winHeight.toString()+"px";	
 					$("#allWrapper").animate({
 						top:animeHeight
-					},"slow",function(){
+					},500,"easeOutCubic",function(){
 						pageIndex-=1;
 						$pageActive=$("#allWrapper section:nth-child("+pageIndex+")");
 						pageIndexName=$pageActive.attr("id");
-						console.log(pageIndexName);
-						animeState="none";});
+						console.log(pageIndexName);});
 					videoStop();
 				}
-				setTimeout(upAnime,400);
-				animeState="doing";
+				upAnime();
+			
 			}
 			return false;
 		}
@@ -93,6 +52,11 @@ jQuery(function($){
 		else
 		{
 			return false;
-		}
-	});
+	
+
+
+
+
+		};
+	});	//mouseover
 });

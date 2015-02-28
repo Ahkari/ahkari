@@ -29,10 +29,10 @@ $(document).ready(function(){
 		var clientHeight=document.documentElement.clientHeight;
 		var left=(clientWidth-700)/2+"px";
 		// var top=(clientHeight-500)/2+"px";
-		console.log(clientWidth);
+		// console.log(clientWidth);
 		// console.log(clientHeight);
-		console.log(left);
-		console.log(top);
+		// console.log(left);
+		// console.log(top);
 		$(".videoInset").css("left",left);
 		// $(".videoInset").css("top",top);
 	};
