@@ -1,0 +1,14 @@
+.storyScenceOne{
+	height: 100%;
+	width: 100%;
+}
+
+.storyBack{
+	height: 100%;
+	width: 100%;
+	background-color: #ddd;
+	background-image: url("../src/upTopSight.JPG");
+	background-position: 50% 50%;
+	transform:scale(1.8);
+	transition:all 1.8s ease-out 0s;
+}
