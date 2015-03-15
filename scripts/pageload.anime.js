@@ -5,6 +5,7 @@ var countingWaveLoadEvent=function(){
 var triggerFingerLoadEvent=function(){
 	console.log(pageIndexName);
 	$(".storyBack").css("transform","scale(1.8)");
+
 };
 
 
@@ -12,6 +13,7 @@ var triggerFingerLoadEvent=function(){
 // 动画过程，两个场景。
 var storyLoadEvent=function(){
 	console.log(pageIndexName);
+	$(".storyScenceTwo").css("display","none");
 	// 第一个场景，ajax请求页面，向其中添加雨滴，然后绑摄像机插件动画
 	function senceOne(){
 		$(".storyBack").css("transform","scale(1.1)");
@@ -35,6 +37,7 @@ var storyLoadEvent=function(){
 var beautifulWorldLoadEvent=function(){
 	console.log(pageIndexName);
 	$(".storyBack").css("transform","scale(1.8)");
+
 };
 var attackOnTitanLoadEvent=function(){
 	console.log(pageIndexName);
@@ -111,7 +114,12 @@ var story={
 	whiteLayerTransform:function(){
 		$(".whiteTransformLayer").css("opacity",1);
 		setTimeout(insideWhiteLayerTransform,500);
+		// $(".storyScenceTwo").css("display","block");
+
 		function insideWhiteLayerTransform(){
+			$(".storyScenceTwo").css("display","block");
+			
+			
 			$(".whiteTransformLayer").css("opacity",0);
 		}
 		// alert(1);

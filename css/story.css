@@ -10,6 +10,7 @@
 	width: 100%;
 	background-color: #ddd;
 	background-image: url("../src/upTopSight.JPG");
+	/*background-image: url("../src/towardToBelowBack.png");*/
 	background-position: 50% 50%;
 	transform:scale(1.8);
 	transition:all 1.8s ease-out 0s;
@@ -38,4 +39,38 @@
 	background-color: #eee;
 	opacity: 0;
 	transition:all 0.5s ease-in 0s;
+}
+
+#story-wrap{
+	position: relative;
+}
+.storyScenceTwo{
+	position: absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width: 100%;
+	display: none;
+}
+
+.storyBackTwo{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background-image: url("../src/towardToBelowBack.png");
+	background-position: 50% 50%;
+	transform:scale(1.055);
+	/*transition:all 1.8s ease-out 0s;*/
+}
+.stroyBackTwoOver{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background-image: url("../src/towardToBelowPerson.png");
+	background-position: 50% 50%;
+	transform:scale(1.055);
 }
