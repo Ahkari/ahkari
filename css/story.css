@@ -12,3 +12,15 @@
 	transform:scale(1.8);
 	transition:all 1.8s ease-out 0s;
 }
+
+
+/*ajax请求副页面的css,无效哎
+
+#sence_one div{
+	background-color: #ddd;
+}*/
+
+#sence_one{
+	height:1400px;
+	width:1000px;
+}
