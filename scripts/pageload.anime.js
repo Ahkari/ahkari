@@ -48,11 +48,11 @@ function getRandom(n){
 
 
 
-// stroy命名空间
+// stroy命名空间，内含story页面的专有操作函数。
 var story={
 	
 
-	//生成三十个雨滴。
+	//生成七十个雨滴。
 	addRainDom:function(data,textStatus,jqXHR){
 		$(".storyBack").html(data);
 		var rainDom;
@@ -64,6 +64,7 @@ var story={
 		$("#sence_one").html(rainDom);
 		// 下面为生成的桑拿室水滴绑动画
 		story.bindCameraAnime();
+		setTimeout(story.whiteLayerTransform,2500);
 
 	},
 	// 给元素绑定动画，此处是摄像机插件。
@@ -104,23 +105,33 @@ var story={
 		    time: 3000 //相机运动的时间
 		});
 
-	}
+	},//bindCameraAnime:function()
 
-	// 加载雨滴第一情景的dom，elementWrap是生成的包裹层，被应用摄像机插件，num是生成的雨滴个数
-	// addRainDom:function(elementWrap,num){
-	// }
-}
-
-
-
-
-
-
-
+	// 白场过渡
+	whiteLayerTransform:function(){
+		$(".whiteTransformLayer").css("opacity",1);
+		setTimeout(insideWhiteLayerTransform,500);
+		function insideWhiteLayerTransform(){
+			$(".whiteTransformLayer").css("opacity",0);
+		}
+		// alert(1);
+		// console.log(1);
 
 
+	},	//whiteLayerTransform:function()
+
+}	//story命名空间
 
 
+
+
+
+
+
+
+
+
+//页面dom加载完毕执行事件
 jQuery(function($){
 	$("#sence_one").on("click",function(){
 		alert(1);
