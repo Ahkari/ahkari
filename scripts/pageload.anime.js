@@ -78,12 +78,12 @@ var story={
 				// "z_position"
 			};
 			eachObj.obj="#obj"+i;
-			eachObj.x_position=getRandom(1400);
-			eachObj.y_position=getRandom(600);
-			eachObj.z_position=getRandom(800);
+			eachObj.x_position=getRandom(1600);
+			eachObj.y_position=getRandom(800);
+			eachObj.z_position=getRandom(400);
 			obejectArray.push(eachObj);
 		};
-		console.log(obejectArray);
+		// console.log(obejectArray);
 		// alert(obejectArray);
 		// ！！！！！使用俺自己做的插件来实现摄相机效果！！！！！
 		$("#sence_one").camera3D(obejectArray,{
@@ -91,19 +91,18 @@ var story={
 		    //相机的运动模式
 		    x_position:"" ,
 		    //相机初始位置（有效）
-		    y_position: "",
+		    y_position: "1000px",
 		    //相机初始位置（有效）
 		    z_position: "800px",
 		    //相机初始位置（非有效）
 		    x_path: "0px",
 		    //相机运动的X分量
-		    y_path: "0px",
+		    y_path: "100px",
 		    //相机运动的Y分量
 		    z_path: "1800px",
 		    //相机运动的Z分量（有效，但只完全支持static和once模式）
-		    time: 2500 //相机运动的时间
+		    time: 3000 //相机运动的时间
 		});
-		console.log(1);
 
 	}
 
@@ -123,6 +122,9 @@ var story={
 
 
 jQuery(function($){
-	
+	$("#sence_one").on("click",function(){
+		story.bindCameraAnime();
+		alert(1);
+	});
 
 }); //jquery
