@@ -56,7 +56,7 @@ var story={
 	addRainDom:function(data,textStatus,jqXHR){
 		$(".storyBack").html(data);
 		var rainDom;
-		for (var i=0;i<100;i++){
+		for (var i=0;i<70;i++){
 			var thisWidth=getRandom(20)+10;
 			rainDom+="<div id=\"obj"+i+"\" style=\"width:30px;height:30px\"><img src=\"./src/rain.png\" width=\""+thisWidth+"\" height=\""+thisWidth+"\" /></div>";
 	
@@ -70,7 +70,7 @@ var story={
 	bindCameraAnime:function(){
 		// story下的一个数组，为摄像机下雨滴位置数组。想办法自己生成。
 		var obejectArray=[];
-		for(var i=0;i<100;i++){
+		for(var i=0;i<70;i++){
 			var eachObj={
 				// "obj",
 				// "x_position",
@@ -80,7 +80,7 @@ var story={
 			eachObj.obj="#obj"+i;
 			eachObj.x_position=getRandom(1600);
 			eachObj.y_position=getRandom(800);
-			eachObj.z_position=getRandom(400);
+			eachObj.z_position=getRandom(600);
 			obejectArray.push(eachObj);
 		};
 		// console.log(obejectArray);
@@ -97,7 +97,7 @@ var story={
 		    //相机初始位置（非有效）
 		    x_path: "0px",
 		    //相机运动的X分量
-		    y_path: "100px",
+		    y_path: "0px",
 		    //相机运动的Y分量
 		    z_path: "1800px",
 		    //相机运动的Z分量（有效，但只完全支持static和once模式）
@@ -123,8 +123,9 @@ var story={
 
 jQuery(function($){
 	$("#sence_one").on("click",function(){
-		story.bindCameraAnime();
 		alert(1);
+		story.bindCameraAnime();
+		
 	});
 
 }); //jquery
