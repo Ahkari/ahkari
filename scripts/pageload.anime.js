@@ -1,3 +1,7 @@
+// 全局变量
+var rainDomCreateAnime;	//雨滴持续增加的动画参数。每一次使用前都需要先销毁。
+var rainLayerTransAnime; //雨滴延时动画。每一次使用都需要先销毁。
+
 // 每页动画在这写
 var countingWaveLoadEvent=function(){
 	console.log(pageIndexName);
@@ -13,7 +17,11 @@ var triggerFingerLoadEvent=function(){
 // 动画过程，两个场景。
 var storyLoadEvent=function(){
 	console.log(pageIndexName);
+	// 先重置dom和动画们。
 	$(".storyScenceTwo").css("display","none");
+	$(".storyBackTwo").empty();
+	$(".stroyBackTwoOver").empty();
+
 	// 第一个场景，ajax请求页面，向其中添加雨滴，然后绑摄像机插件动画
 	function senceOne(){
 		$(".storyBack").css("transform","scale(1.1)");
@@ -67,7 +75,9 @@ var story={
 		$("#sence_one").html(rainDom);
 		// 下面为生成的水滴绑动画
 		story.bindCameraAnime();
-		setTimeout(story.whiteLayerTransform,2500);
+
+		window.clearInterval(rainLayerTransAnime);
+		rainLayerTransAnime=setTimeout(story.whiteLayerTransform,2500);
 
 	},
 	// 给元素绑定动画，此处是摄像机插件。
@@ -135,12 +145,12 @@ var story={
 		var thisTimeArr=[];
 		var thisTimeArrCopy=[];
 
-		for (var i=0;i<40;i++){
+		for (var i=0;i<15;i++){
 			var thisWidth=getRandom(15)+10;//设定雨滴粒子大小在10-25之间
 			var thisTop=getRandom(1000)-500;	//起始高度,注意运算规则.考虑正负。
 			var thisPath=thisTop+2000;	//路径，由起始高度而来
 			thisPathArr.push(thisPath);	
-			var thisTime=Math.floor(250000/thisWidth);	//运行时长，由粒子大小而来，应为遵照近大远小，近快远慢原则。
+			var thisTime=Math.floor(350000/thisWidth);	//运行时长，由粒子大小而来，应为遵照近大远小，近快远慢原则。
 			thisTimeArr.push(thisTime);
 			// var thisTop=getRandom(1000);
 			var thisLeft=getRandom(2000)-200;	//起始x位置，考虑正负。
@@ -153,12 +163,12 @@ var story={
 		});	//$(".stroyBackTwoOver div").each(function(index)
 
 		//第二层
-		for (var i=0;i<50;i++){
+		for (var i=0;i<25;i++){
 			var thisWidthCopy=getRandom(15)+5;//设定雨滴粒子大小在10-25之间
 			var thisTopCopy=getRandom(1000)-500;	//起始高度,注意运算规则.考虑正负。
 			var thisPathCopy=thisTopCopy+2000;	//路径，由起始高度而来
 			thisPathArrCopy.push(thisPathCopy);	
-			var thisTimeCopy=Math.floor(250000/thisWidthCopy);	//运行时长，由粒子大小而来，应为遵照近大远小，近快远慢原则。
+			var thisTimeCopy=Math.floor(400000/thisWidthCopy);	//运行时长，由粒子大小而来，应为遵照近大远小，近快远慢原则。
 			thisTimeArrCopy.push(thisTimeCopy);
 			// var thisTop=getRandom(1000);
 			var thisLeftCopy=getRandom(2000)-200;	//起始x位置，考虑正负。
@@ -168,15 +178,14 @@ var story={
 		$(".storyBackTwo").html(rainDropDomCopy);
 		$(".storyBackTwo div").each(function(indexCopy){
 			$(this).animate({top:"+="+thisPathArrCopy[indexCopy]+"px"},thisTimeArrCopy[indexCopy],"linear");
-			console.log($(this));
 		});	//$(".stroyBackTwoOver div").each(function(index)
 
 
-		//开始粒子生成。
+		//开始粒子生成。先清除上一次的粒子动画
 		
+		window.clearInterval(rainDomCreateAnime);
+		rainDomCreateAnime=setInterval(story.createOneRainDrop,400);
 		
-		var rainDomCreateAnime=setInterval(story.createOneRainDrop,200);
-		// var testThisAnime=setInterval(story.testInterval,500);
 	},	//createRainDrop:function()
 
 	
@@ -192,7 +201,7 @@ var story={
 		var thisWidth=getRandom(15)+10;//设定雨滴粒子大小在10-25之间
 		var thisTop=getRandom(500)-500;	//起始高度,注意运算规则.考虑正负。
 		var thisPath=thisTop+2000;	//路径，由起始高度而来
-		var thisTime=Math.floor(250000/thisWidth);	//运行时长，由粒子大小而来，应为遵照近大远小，近快远慢原则。
+		var thisTime=Math.floor(350000/thisWidth);	//运行时长，由粒子大小而来，应为遵照近大远小，近快远慢原则。
 		var thisLeft=getRandom(2000)-200;
 
 		//粒子计数
@@ -202,13 +211,17 @@ var story={
 		
 		var rainDropOneDom="<div id=\"rainDropOneDom"+index+"\" style=\"width:30px;height:30px;position:absolute;top:"+thisTop+"px;left:"+thisLeft+"px\"><img src=\"./src/rain.png\" width=\""+thisWidth+"\" height=\""+thisWidth+"\" /></div>";
 		$(".stroyBackTwoOver").append(rainDropOneDom);
-		$("#rainDropOneDom"+index).animate({top:"+="+thisPath+"px"},thisTime,"linear");
+		$("#rainDropOneDom"+index).animate({top:"+="+thisPath+"px"},thisTime,"linear",removeOneRainDom);
 
+		// 动画完即移出单个雨滴
+		function removeOneRainDom(){
+			$("#rainDropOneDom"+index).remove();
+		}
 
 		var thisWidthCopy=getRandom(15)+5;//设定雨滴粒子大小在10-25之间
 		var thisTopCopy=getRandom(500)-500;	//起始高度,注意运算规则.考虑正负。
 		var thisPathCopy=thisTopCopy+2000;	//路径，由起始高度而来
-		var thisTimeCopy=Math.floor(250000/thisWidthCopy);	//运行时长，由粒子大小而来，应为遵照近大远小，近快远慢原则。
+		var thisTimeCopy=Math.floor(400000/thisWidthCopy);	//运行时长，由粒子大小而来，应为遵照近大远小，近快远慢原则。
 		var thisLeftCopy=getRandom(2000)-200;
 
 		//粒子计数
@@ -220,12 +233,16 @@ var story={
 		+"\" /></div>";
 		
 		$(".storyBackTwo").append(rainDropOneDomCopy);
-		$("#rainDropOneDomCopy"+indexCopy).animate({top:"+="+thisPathCopy+"px"},thisTimeCopy,"linear");
+		$("#rainDropOneDomCopy"+indexCopy).animate({top:"+="+thisPathCopy+"px"},thisTimeCopy,"linear",removeOneRainDomCopy);
+
+		function removeOneRainDomCopy(){
+			$("#rainDropOneDomCopy"+indexCopy).remove();
+		}
 		// console.log(index);
 		index++;
 		indexCopy++;
 	},	//createOneRainDrop:function()
-	testInterval:function(){
+		testInterval:function(){
 		
 		console.log($("#rainDomCount").val());//粒子计数。绑定在页面的隐藏input上。
 		var test=Number($("#rainDomCount").val())+1;
@@ -249,10 +266,5 @@ var story={
 
 //页面dom加载完毕执行事件
 jQuery(function($){
-	$("#sence_one").on("click",function(){
-		alert(1);
-		story.bindCameraAnime();
-		
-	});
-
+	
 }); //jquery
