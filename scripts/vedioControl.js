@@ -1,12 +1,12 @@
 var videoStatement=0;
 
-function videoStart(){
+function videoStart(wrapName){
 	videoStatement=1;
-	$("#clickWrap").css('display','block');
+	$("#"+wrapName+" .clickWrap").css('display','block');
 }
 function videoStop(){
 	videoStatement=0;
-	$("#clickWrap").css('display','none');
+	$(".clickWrap").css('display','none');
 }
 
 $(document).ready(function(){
@@ -14,10 +14,19 @@ $(document).ready(function(){
 	$("#triggerFinger-wrap").bind("click",function(){
 		// alert(123);
 		if (!videoStatement){
-			videoStart();			
+			videoStart("triggerFinger-wrap");			
 		}
 		else{
-			videoStop();
+			videoStop("triggerFinger-wrap");
+		}
+	});
+
+	$("#story-wrap").on("click",function(){
+		if(!videoStatement){
+			videoStart("story-wrap");
+		}
+		else{
+			videoStop("story-wrap");
 		}
 	});
 	// $("#clickWrap").bind("click",function(){

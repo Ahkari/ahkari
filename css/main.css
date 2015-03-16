@@ -149,7 +149,7 @@ html,body,{
 
 /*弹出层和视频层*/
 
-#clickWrap{
+.clickWrap{
 	position: fixed;
 	z-index: 50;
 	top:0px;
