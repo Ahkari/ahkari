@@ -1,0 +1,23 @@
+.beautiful_middle{
+	margin: 0px auto;
+	width: 800px;
+	height: 100%;
+}
+
+.beatiful_middle_top{
+	margin: 0px auto;
+	width: 100px;
+	height:55%;
+}
+
+.beautifulTitle{
+	margin: 0px auto;
+	width: 520px;
+	height: 56px;
+	/*background-color: #ddd;*/
+	background-image: url("../src/beautifulWorldTitle.png");
+}
+
+
+
+
