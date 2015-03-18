@@ -36,11 +36,8 @@ var storyLoadEvent=function(){
 				type:"get",
 			}
 		);
-		
-
 	}
 	senceOne();
-
 
 };
 var beautifulWorldLoadEvent=function(){
@@ -48,7 +45,18 @@ var beautifulWorldLoadEvent=function(){
 	$(".storyBack").css("transform","scale(1.8)");
 	window.clearInterval(rainDomCreateAnime);
 
-	beautiful.cutCard($("#beautifulTitle"));
+	// 这里使用个人插件fragmentFly，用于切割指定绑定了背景图像的元素，并对切割后的元素做视差动画。
+	// 原型是beautiful.cutCard，写于15/3/18,插件同日开发。
+	$("#beautifulTitle").fragmentFly({
+		cut_dir:"x",	//x方向平均切割。
+		ave_part:12,		//切割成12份
+		rm_part:[2,5]	//Y方向最少有2块，最多有5块。随机
+	},{
+		anime_dir:"down",	//动画向下
+		path:[200,450],	//动画最短300px，最长450px
+		time:[1200,2000] //动画持续时间最短1500ms，最长2000ms
+	});
+
 
 };
 var attackOnTitanLoadEvent=function(){
@@ -251,10 +259,6 @@ var story={
 		console.log($("#rainDomCount").val());//粒子计数。绑定在页面的隐藏input上。
 		var test=Number($("#rainDomCount").val())+1;
 		$("#rainDomCount").val(test);
-		
-	
-	
-		
 	}
 
 }	//story命名空间
@@ -263,6 +267,9 @@ var story={
 var beautiful={
 	//元素卡片化。
 	//特例模式，即对指定的517*56像素图片分割。X分12部分，y随机分2,3块。
+	//cutCard此方法是个人插件，fragmentFly的原型。
+	// 在整合为fragmentFly插件后，此处的方法弃用，不过可以放在这里用于纪念。
+	// 插件中默认的参数也是参考于此方法。
 	cutCard:function(cardDom){
 		var cardHeight=cardDom.height();
 		var cardWidth=cardDom.width();
@@ -291,17 +298,11 @@ var beautiful={
 				
 				eachTitle="<div id=\""+cardDomName+"_cardCopy"+i+"_"+j+"\" "+styleStr+"></div>";
 				creatTitleCopy+=eachTitle;
-	
 			}	//for (var j=0;j<isRandom;j++)
-
-
 		}	//for (var i=0;i<12;i++)
-		
 	
 		cardDom.html(creatTitleCopy);
-
 		// 绑动画
-
 		for (var i=0;i<12;i++){
 			var isRandom=(i%2==0)?2:3;
 			for (var j=0;j<isRandom;j++){
@@ -320,10 +321,9 @@ var beautiful={
 
 			}
 		}
-
-
-		
 	},//cutCard:function(cardDom)
+
+
 
 }
 
