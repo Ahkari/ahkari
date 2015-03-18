@@ -10,14 +10,28 @@
 	height:55%;
 }
 
-.beautifulTitle{
+#beautifulTitle{
 	margin: 0px auto;
-	width: 520px;
+	width: 517px;
 	height: 56px;
 	/*background-color: #ddd;*/
-	background-image: url("../src/beautifulWorldTitle.png");
+	/*background-image: url("../src/beautifulWorldTitle.png");
+	background-repeat: no-repeat;*/
+	position: relative;
+	/*background:url("../src/beautifulWorldTitle.png") no-repeat;*/
+	/*background-color: #ccc;*/
 }
 
+#cardCopy1{
+	/*position: absolute;
+	z-index:10;
+	left:100px;
+	top:10px;
+	width: 100px;
+	height: 30px;
+	background:url("../src/beautifulWorldTitle.png") no-repeat -100px -10px;
+	background-color: #111;*/
+}
 
 
 
