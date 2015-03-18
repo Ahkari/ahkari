@@ -18,11 +18,13 @@
 	/*background-image: url("../src/beautifulWorldTitle.png");
 	background-repeat: no-repeat;*/
 	position: relative;
-	/*background:url("../src/beautifulWorldTitle.png") no-repeat;*/
+/*	background-image:url("../src/beautifulWorldTitle.png");
+	display: none;*/
 	/*background-color: #ccc;*/
 }
 
 #cardCopy1{
+
 	/*position: absolute;
 	z-index:10;
 	left:100px;
@@ -33,5 +35,23 @@
 	background-color: #111;*/
 }
 
+.beautiful_middle_bottom{
+	margin:20px auto;
+	width: 50%;
+	height: 30%;
+	/*background-color: #aaa;*/
+}
+
+.beautiful_middle_icon{
+	position: relative;
+	margin:30px auto;
+	width: 150px;
+	height:150px;
+	/*background-color: #ccc;*/
+	/*background:url("../src/evaIcon.png") no-repeat 45% 45%;*/
+	 /*#fbb*/
+	border-radius: 75px;
+
+}
 
 

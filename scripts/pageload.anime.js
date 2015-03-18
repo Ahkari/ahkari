@@ -48,15 +48,28 @@ var beautifulWorldLoadEvent=function(){
 	// 这里使用个人插件fragmentFly，用于切割指定绑定了背景图像的元素，并对切割后的元素做视差动画。
 	// 原型是beautiful.cutCard，写于15/3/18,插件同日开发。
 	$("#beautifulTitle").fragmentFly({
+		image_url:"./src/beautifulWorldTitle.png",	//该元素的背景图
 		cut_dir:"x",	//x方向平均切割。
 		ave_part:12,		//切割成12份
 		rm_part:[2,5]	//Y方向最少有2块，最多有5块。随机
 	},{
 		anime_dir:"down",	//动画向下
-		path:[200,450],	//动画最短300px，最长450px
-		time:[1200,2000] //动画持续时间最短1500ms，最长2000ms
+		path:[200,450],	//动画最短200px，最长450px
+		time:[1200,2000], //动画持续时间最短1200ms，最长2000ms
+		opacity:[0,1]	//动画透明度变化，从0变成1
 	});
 
+	$(".beautiful_middle_icon").fragmentFly({
+		image_url:"./src/evaIcon.png",	//该元素的背景图
+		cut_dir:"x",	//x方向平均切割。
+		ave_part:4,		//切割成12份
+		rm_part:[2,4]	//Y方向最少有2块，最多有5块。随机
+	},{
+		anime_dir:"down",	//动画向下
+		path:[100,180],	//动画最短200px，最长450px
+		time:[800,1400], //动画持续时间最短1200ms，最长2000ms
+		opacity:[0,0.8]	//动画透明度变化，从0变成1
+	});
 
 };
 var attackOnTitanLoadEvent=function(){
